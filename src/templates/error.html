@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %} Instabase - Error {% endblock %}
+
+{% block content %}
+<div class="row text-center">
+  <h3>Error</h3>
+  <p class="lead">
+    We are unable to serve your this request.
+  </p>
+  <h3><small>Error Detail: {{context.error}}</small></h3>
+</div>
+{% endblock %}

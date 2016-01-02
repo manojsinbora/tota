@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block navitems %}
+{% include "navitems.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="row"> 
+  <div class="col-lg-2 col-md-2 col-sm-3">
+    <br />
+    {% include "account/settings-sidebar.html" %}
+  </div> 
+  <div class="col-lg-10 col-md-10 col-sm-9">
+    <br />
+    <p class="lead">Profile</p>
+    <hr />
+    <div class="row">
+      <div class="col-md-6 col-lg-6 col-sm-6">
+        {% if context.error %}
+        <div class="alert alert-danger">{{context.msg}}</div>
+        {% endif %}
+        {% if context.updated %}
+        <div class="alert alert-success">{{context.msg}}</div>
+        {% endif %}
+        <form class="form" method="POST" action="/account/profile" enctype=multipart/form-data>
+          
+          <label>Profile Picture</label> 
+          <div class="form-group">
+            <input class="form-control" style="display:none;" id="profile-photo-updated" name="profile-photo-updated" value="false" />
+            
+            <img id="profile-image-img" src="{{context.profile_photo_url}}" style="width:100px; height:100px; margin-bottom:5px;">           
+            <br />
+            <input type="file" name="profile-img-file" id="profile_image_input">
+          </div>
+          
+          <div class="form-group">
+            <label>Name</label>  
+            <input type="name" class="form-control" name="full-name" value="{{context.full_name}}">
+          </div>
+          
+          <br />
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}
+  {% block javascript %}
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#profile_image_input').change(function(e) {
+        var img = URL.createObjectURL(e.target.files[0]);
+        $('#profile-image-img').attr('src', img);
+        $('#profile-photo-updated').val('true');
+      });
+    });
+  </script>
+  {% endblock %}

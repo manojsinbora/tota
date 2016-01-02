@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block navitems %}
+<div class="collapse navbar-collapse" id="custom-collapse">
+  <div class="nav navbar-nav navbar-right">
+    <a href="/account/login" title="Sign in" class="btn btn-round navbar-btn btn-default">Sign in</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container"> 
+  <div class="row text-center">
+    <div class="col-md-4 col-md-offset-4">
+      <h3>Create an account</h3>
+      <br />
+      {% if context.error %}
+      <div class="alert alert-danger">{{context.msg}}</div>
+      {% endif %}
+
+      <form class="form" method="POST" action="/account/register">          
+        <div class="form-group input-group">
+          <div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
+          <input type="email" class="form-control" name="email" placeholder="Your email" required>
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-addon"><i class="fa">@</i></div>
+          <input type="text" class="form-control" name="username" placeholder="Choose a username" required>
+        </div>
+
+        <div class="form-group input-group">
+          <div class="input-group-addon"><i class="fa fa-key"></i></div>
+          <input type="password" class="form-control" name="password" placeholder="Choose a password" required>
+        </div>
+        
+        <div>
+          <button type="submit" class="btn btn-success btn-block">Create an account</button>
+        </div>
+
+        <br />
+        <p class="lead">
+          Already have an account? <br />
+          <a href="/account/login">Sign in</a>
+        </p>
+
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,244 @@
+@import url(//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic);
+@import url(//fonts.googleapis.com/css?family=Iceland);
+
+
+/* ---------------------------------------------- /*
+ * General Style
+/* ---------------------------------------------- */
+
+body {
+  background-color: #fff;
+  padding-top: 70px;
+  font: 400 14px/1.8 'Lato', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+  border-top: none;
+  border-bottom: #f5f5f5 solid thin;
+}
+
+.modal .modal-body {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.btn-round {
+  border-radius: 999em;
+}
+
+.fa-caret-down {
+  color: #ddd;
+}
+
+a, .link {
+  color: #2895F1;
+  cursor: pointer;
+}
+
+a:hover, a:visited, a:active, .link:hover, .link:visited, .link:active {
+  text-decoration: none;
+}
+
+a:hover, .link:hover {
+  color: #337ab7;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.border-top {
+  border-top: #f5f5f5 solid thin;
+}
+
+.border-bottom {
+  border-bottom: #f5f5f5 solid thin;
+}
+
+.border {
+  border: #f5f5f5 solid thin;
+}
+
+a.list-item i.fa, a.list-item:hover i.fa {
+  color: #2895F1;
+}
+
+a.list-item i.glyphicon, a.list-item:hover i.glyphicon {
+  color: #2895F1;
+}
+
+a.list-item i.fa-inverse, a.list-item:hover i.fa-inverse {
+  color: #fff;
+}
+
+a.list-item, a.list-item:hover {
+  color: #333;
+  font-weight: 400;
+}
+
+/* ---------------------------------------------- /*
+ * Sidebar components
+/* ---------------------------------------------- */
+
+.sidebar a.active, .sidebar a.active:hover {
+  color: #666;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------- /*
+ * Navbar components
+/* ---------------------------------------------- */
+
+.navbar-custom {
+  background-color: #fff;
+  border: none;
+  opacity: 0.9;
+  border-radius: 0;
+  border-bottom: #eee solid thin;
+  margin: 0;
+  z-index: 99;
+}
+
+.navbar-custom .navbar-brand {
+  color: #333;
+  font-weight: 400;
+  font-size: 45px;
+  font-family: 'Iceland', cursive;
+  text-transform: none;
+}
+
+.navbar-custom .navbar-toggle .icon-bar {   
+  background: #666;   
+ }
+
+ .nav-tabs.nav-preview {
+  border-bottom: none;
+  margin-right: 15px;
+ }
+
+ .nav-tabs.nav-preview>li>a, .nav-tabs.nav-preview>li.active>a, .nav-tabs.nav-preview>li.active>a:hover {
+  border: none;
+  padding: 3px 15px;
+  border-radius: 0;
+ }
+
+ .nav-tabs.nav-preview>li>a:hover {
+  background: none;
+ }
+
+/* ---------------------------------------------- /*
+ * Panels
+/* ---------------------------------------------- */
+
+.panel-heading {
+  padding: 0;
+  padding-left: 10px;
+}
+
+/* ---------------------------------------------- /*
+ * Footer components
+/* ---------------------------------------------- */
+
+#footer {
+  margin-top: 100px;
+  text-align: center;
+  overflow-x: hidden;
+  border-top: #f5f5f5 solid thin; 
+  padding: 40px 0;
+}
+
+.copyright {
+  margin: 0;
+}
+
+/* ---------------------------------------------- /*
+ * DataTable
+/* ---------------------------------------------- */
+
+table.dataTable.no-footer {
+  border-bottom: none;
+}
+
+table.dataTable thead .sorting, 
+table.dataTable thead .sorting_asc, 
+table.dataTable thead .sorting_desc {
+    background : none;
+}
+
+/* ---------------------------------------------- /*
+ * File Upload Components
+/* ---------------------------------------------- */
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+.drop-box {  
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+  padding: 20px;
+}
+
+/* ---------------------------------------------- /*
+ * Status Message
+/* ---------------------------------------------- */
+
+.status-message {
+  position: fixed;
+  float: right;
+  bottom: -1px;
+  right: 0;
+  width: 500px;
+  margin: 0;
+  padding: 0;
+  padding-right: 10px;
+}
+
+.status-message .table {
+  width: 100%;
+}
+
+.status-message .table tr {
+  width: 100%;
+}
+
+.status-message .table tr td {
+  padding-left: 15px;
+  max-width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-message .panel {
+  border-radius: 0;
+  margin-bottom: 0; 
+}
+
+.status-message .panel-body {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-left: 0;
+  padding-top: 0;
+}

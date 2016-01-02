@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block navitems %}
+{% include "navitems.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="row"> 
+  <div class="col-lg-2 col-md-2 col-sm-3">
+    <br />
+    {% include "account/settings-sidebar.html" %}
+  </div> 
+  <div class="col-lg-10 col-md-10 col-sm-9">
+    <br />
+    <p class="lead">Account Settings</p>
+    <hr />
+    <div class="row">
+      <div class="col-md-6 col-lg-6 col-sm-6">
+        {% if context.error %}
+        <div class="alert alert-danger">{{context.msg}}</div>
+        {% endif %}
+        {% if context.updated %}
+        <div class="alert alert-success">{{context.msg}}</div>
+        {% endif %}
+        <form class="form" method="POST" action="/account/settings">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Email"
+              value="{{context.email}}" required>
+
+            <br />
+            <label>Old password</label>
+            <input type="password" class="form-control" name="old-password">
+          
+            <br />
+            <label>New password</label>
+            <input type="password" class="form-control" name="new-password">
+          </div>
+          <br />
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update Account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

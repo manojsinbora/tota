@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block navitems %}
+<div class="collapse navbar-collapse" id="custom-collapse">
+  <div class="nav navbar-nav navbar-right">
+    <a href="/account/register" title="Create an account" class="btn btn-round navbar-btn btn-default">Sign up</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container"> 
+  <div class="row text-center">
+    <div class="col-md-4 col-md-offset-4">
+      <h3>Sign in</h3>
+
+      <p class="lead">
+        or <a href="/account/register">create an account</a>
+      </p>
+      <br />
+      
+      {% if context.error %}
+      <div class="alert alert-danger">{{context.msg}}</div>
+      {% endif %}
+
+      <form class="form" method="POST" action="/account/login">
+        <input type="hidden" name="next" value="{{context.next}}">
+        <input type="hidden" name="oauth" value="{{context.oauth}}">
+        <div class="form-group input-group">
+          <div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
+          <input type="email" class="form-control" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-addon"><i class="fa fa-key"></i></div>
+          <input type="password" class="form-control" name="password" placeholder="Password" required>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </div>
+        
+        <br />
+        <p class="lead">
+          <a href="/account/login">Forgot password?</a>
+        </p>
+      </form>
+    
+    </div>
+  </div>
+</div>
+{% endblock %}
