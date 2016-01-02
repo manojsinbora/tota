@@ -19,4 +19,4 @@ login_manager.login_view = '/account/login'
 
 @app.route("/")
 def hello():
-  return "Hello World!"
+  return render_template('/account/login.html')
